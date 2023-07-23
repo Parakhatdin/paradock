@@ -1,0 +1,14 @@
+services:
+  app-php:
+    build: ./app-php
+    volumes:
+      - ./:/app
+  mysql:
+    image: mariadb
+    environment: 
+        MARIADB_ROOT_PASSWORD: root
+    volumes:
+        - ./storage/dbdata:/var/lib/mariadb
+    ports:
+    - 3307:3306
+    
